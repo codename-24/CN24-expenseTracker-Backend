@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="./public/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <script src="https://kit.fontawesome.com/d18d2c20a4.js" crossorigin="anonymous"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <div id="dashboard-bar">
+        <h2><i class="fa-solid fa-arrow-trend-up"></i>&nbsp&nbspDashboard</h2>
+        <button onclick="handleLogout(event)"><i class="fa-solid fa-right-from-bracket"></i>Logout</button>
+    </div>
+    <div id="sidebar">
+        <ul id="menuitems">
+            <a href="dashboard.html"><li><i class="fa-solid fa-chart-line"></i>&nbsp&nbspDashboard</li></a>
+            <a href="report.html" ><li><i class="fa-solid fa-building-columns"></i>&nbspGen.&nbspReport</li></a>
+            <a href="membership.html"><li><i class="fa-solid fa-money-check-dollar"></i>&nbspBuy&nbspPremium</li></a>
+            <a href="#"><li><i class="fa-solid fa-face-smile-beam"></i>&nbsp&nbspAbout us</li></a> 
+        </ul>
+
+    </div>
+    <div id="dashboard-head">
+        <h1><i class="fa-solid fa-user"></i>&nbsp&nbsp&nbspWelcome</h1><br>
+        <p style="font-size:22px; margin-left:190px;"><i>''Control your expenses better than your competition''</i></p>
+        <!--
+        <div id="membership">
+            <p style="color:green;position:absolute;top:-70px;left:650px;">Premium&nbspUser</p> 
+        </div>
+        -->
+        <!--changed-->
+        <div id="lightdark">
+            <input type="checkbox" class="checkbox" id="chk" />
+            <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+            </label>
+        </div>
+        
+        
+       
+
+        <!--changeend-->
+
+
+
+
+        
+    </div>
+    <div id="dashboard-body">
+        <div id="dashboard-left-title">
+            <h2><b>NET WORTH</b></h2>
+            <div id="networth-amount">
+                <p>₹ 5000 </p>
+            </div>
+        </div>
+        <div id="dashboard-body-left">
+            <table class="dashboardtable">
+                <tr>
+                    <th class="dashboardtablehead">INCOME</th>
+                    <th class="dashboardtablehead">20000</th>
+                </tr>
+                <tr>
+                    <td class="dashboardtabledata">My wallet</td>
+                    <td class="dashboardtabledata">5000</td>
+                </tr>
+                <tr>
+                    <th class="dashboardtablehead">BANK ACCOUNT</th>
+                    <th class="dashboardtablehead"> 40000</th>
+                </tr>
+                <tr>
+                    <td class="dashboardtabledata">Savings</td>
+                    <td class="dashboardtabledata">20000</td>
+                </tr>
+                <tr>
+                    <td class="dashboardtabledata">Salary account</td>
+                    <td class="dashboardtabledata">20000</td>
+                </tr>
+                <tr>
+                    <th class="dashboardtablehead">CARD</th>
+                    <th class="dashboardtablehead">0</th>
+                </tr>
+                <tr>
+                    <td class="dashboardtabledata">MasterCard **803</td>
+                    <td class="dashboardtabledata">0</td>
+                </tr>
+                <tr>
+                    <td class="dashboardtabledata">Visa **438</td>
+                    <td class="dashboardtabledata">0</td>
+                </tr>
+            </table>
+
+        </div>
+        <div id="dashboard-right-title">
+            <p>NEW TRANSACTION</p>
+        </div>
+        <div id="dashboard-body-right">
+            <div id="body-right-expense">
+                <p>ADD EXPENSE</p>
+                <form id="addexpense" onsubmit="addNewExpense(event)">
+                    <input type="number" name="expenseamount" required placeholder="Enter amount"> </input>
+                    <input type="text" name="description" required placeholder="Enter description"> </input>
+                    <select id="category" name="category">
+                        <option value="cat">--Select Category--</option>
+                        <option value="food">Food</option>
+                        <option value="Movie">Movies</option>
+                        <option value="fuel">Fuel</option>
+                        <option value="misc">Miscellaneous</option>
+                    </select>
+                    <button>Add Expense</button>
+                </form>
+                
+
+            </div>
+            <div id="body-right-transaction">
+                <p>Recent Transactions</p>
+                <table id="listOfExpenses" class="transactiontable">
+
+                </table>
+                
+                
+            </div>
+            
+        </div>
+    </div>
+    <ul id='listOfExpenses'>
+
+    </ul>
+    <script src='./dashboard.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+</html>
